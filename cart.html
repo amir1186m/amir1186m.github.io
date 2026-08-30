@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>سبد خرید | شایلی</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial;
+    background:#080808;
+    color:white;
+    padding-bottom:70px;
+}
+
+header{
+    padding:25px;
+    text-align:center;
+    border-bottom:1px solid #80631d;
+}
+
+header h1{
+    color:#e5bf4c;
+}
+
+.container{
+    width:92%;
+    max-width:850px;
+    margin:auto;
+}
+
+.title{
+    margin:30px 0 20px;
+    color:#e5bf4c;
+    border-right:4px solid #d3aa35;
+    padding-right:10px;
+}
+
+.cart{
+    background:#141414;
+    border:1px solid #333;
+    border-radius:18px;
+    padding:20px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #292929;
+}
+
+.remove{
+    background:#641818;
+    color:white;
+
+    border:none;
+    border-radius:8px;
+
+    padding:8px 12px;
+
+    cursor:pointer;
+}
+
+.empty{
+    text-align:center;
+    padding:40px;
+    color:#888;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:12px 20px;
+
+    border-radius:11px;
+
+    margin-top:20px;
+
+    text-decoration:none;
+}
+
+.gold{
+    background:#d4aa35;
+    color:#111;
+}
+
+footer{
+    margin-top:50px;
+    text-align:center;
+    padding:30px;
+    color:#777;
+    border-top:1px solid #333;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🛒 سبد خرید</h1>
+
+</header>
+
+
+<div class="container">
+
+<h2 class="title">
+محصولات انتخاب‌شده
+</h2>
+
+<div class="cart">
+
+<div id="cartList"></div>
+
+<div id="count"
+style="color:#e5bf4c;margin-top:20px">
+</div>
+
+<a
+href="index.html"
+class="btn gold">
+← ادامه خرید
+</a>
+
+<a
+href="index.html#contact"
+class="btn gold">
+📞 ثبت سفارش
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+طلا و جواهرات شایلی
+<br>
+فلاورجان، خیابان امام
+
+</footer>
+
+
+<script>
+
+let cart =
+JSON.parse(
+localStorage.getItem("shayliCart") || "[]"
+);
+
+
+function renderCart(){
+
+    const list =
+    document.getElementById("cartList");
+
+    const count =
+    document.getElementById("count");
+
+
+    if(cart.length===0){
+
+        list.innerHTML=
+        <div class="empty">
+        🛒 سبد خرید شما خالی است.
+        </div>;
+
+        count.textContent="تعداد: ۰";
+
+        return;
+
+    }
+
+
+    list.innerHTML="";
+
+
+    cart.forEach((item,index)=>{
+
+        const div =
+        document.createElement("div");
+
+        div.className="item";
+
+        div.innerHTML=
+
+        <span>
+        💍 ${item}
+        </span>
+
+        <button
+        class="remove"
+        onclick="removeItem(${index})">
+        حذف
+        </button>
+
+        ;
+
+        list.appendChild(div);
+
+    });
+
+
+    count.textContent =
+    "تعداد محصولات: " +
+    cart.length.toLocaleString("fa-IR");
+
+}
+
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    localStorage.setItem(
+        "shayliCart",
+        JSON.stringify(cart)
+    );
+
+    renderCart();
+
+}
+
+
+renderCart();
+
+</script>
+
+</body>
+
+</html>
