@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>طلا و جواهرات شایلی | فلاورجان</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#090909;
+    color:#fff;
+    font-family:Tahoma,Arial,sans-serif;
+    line-height:1.8;
+}
+
+/* ================= NAV ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(18,18,18,.96);
+    border-bottom:1px solid #d4af37;
+
+    padding:14px 20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#d4af37;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:8px;
+    transition:.2s;
+}
+
+nav a:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+.nav-cart{
+    background:#d4af37;
+    color:#000;
+    border:0;
+    padding:9px 15px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:650px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #29200b 0,
+            #090909 55%
+        );
+}
+
+.hero h1{
+    color:#d4af37;
+
+    font-size:
+        clamp(35px,7vw,65px);
+
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:20px;
+    margin-bottom:25px;
+}
+
+.hero img{
+    width:330px;
+    max-width:90%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:1px solid #d4af37;
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 0 35px
+        rgba(212,175,55,.15);
+}
+
+/* ================= BUTTON ================= */
+
+.gold-btn{
+    background:#d4af37;
+    color:#000;
+
+    border:0;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.gold-btn:hover{
+    transform:translateY(-2px);
+    background:#f1d76b;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:65px 20px;
+}
+
+.section-title{
+    text-align:center;
+    color:#d4af37;
+    font-size:32px;
+    margin-bottom:35px;
+}
+
+/* ================= INFO ================= */
+
+.info-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(210px,1fr)
+        );
+
+    gap:20px;
+}
+
+.info-card{
+    background:#151515;
+    border:1px solid #333;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    text-align:center;
+}
+
+.info-card h3{
+    color:#d4af37;
+    margin-bottom:8px;
+}
+
+/* ================= FILTER ================= */
+
+.filter-box{
+    max-width:1100px;
+    margin:0 auto 35px;
+
+    background:#151515;
+
+    border:1px solid #333;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:end;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.filter-item{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.filter-item label{
+    color:#d4af37;
+}
+
+input,
+select,
+textarea{
+
+    background:#0c0c0c;
+
+    color:#fff;
+
+    border:1px solid #444;
+
+    border-radius:8px;
+
+    padding:11px;
+
+    outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#d4af37;
+}
+
+.search-box{
+    width:100%;
+    max-width:500px;
+    margin:0 auto 25px;
+}
+
+.search-box input{
+    width:100%;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px,1fr)
+        );
+
+    gap:25px;
+}
+
+.product{
+    background:#151515;
+
+    border:1px solid #d4af37;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    min-height:430px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    text-align:center;
+
+    transition:.25s;
+
+    position:relative;
+}
+
+.product:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(212,175,55,.15);
+}
+
+.product img{
+
+    width:175px;
+    height:175px;
+
+    object-fit:contain;
+
+    border-radius:12px;
+}
+
+.product h3{
+    color:#d4af37;
+}
+
+.product-description{
+    color:#bbb;
+    font-size:14px;
+}
+
+.product-price{
+    color:#d4af37;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.stock{
+    font-size:13px;
+    color:#6ee7a0;
+}
+
+.out-stock{
+    color:#ff7777;
+}
+
+.favorite{
+    position:absolute;
+
+    top:10px;
+    left:10px;
+
+    background:#222;
+
+    border:0;
+
+    color:#fff;
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:19px;
+}
+
+.favorite.active{
+    color:#ff4d6d;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#111;
+}
+
+.about-content{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:#ccc;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+}
+
+.phone{
+    display:inline-block;
+
+    color:#d4af37;
+
+    font-size:24px;
+
+    direction:ltr;
+
+    margin:10px;
+}
+
+.contact-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:20px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#151515;
+
+    border-top:1px solid #d4af37;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#aaa;
+}
+
+/* ================= CART ================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    z-index:3000;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:600px;
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:#171717;
+
+    border:1px solid #d4af37;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    position:relative;
+}
+
+.close{
+    position:absolute;
+
+    left:15px;
+    top:10px;
+
+    background:none;
+    border:0;
+
+    color:#fff;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+.cart-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    border-bottom:1px solid #333;
+
+    padding:14px 0;
+}
+
+.cart-item img{
+
+    width:60px;
+    height:60px;
+
+    object-fit:contain;
+}
+
+.cart-info{
+    flex:1;
+    text-align:right;
+}
+
+.qty{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:5px;
+}
+
+.qty button{
+    border:0;
+
+    background:#d4af37;
+
+    color:#000;
+
+    width:28px;
+    height:28px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+}
+
+.total{
+    color:#d4af37;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin:20px 0;
+}
+
+/* ================= TOAST ================= */
+
+#toast{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    z-index:5000;
+
+    background:#d4af37;
+
+    color:#000;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transform:
+        translateY(100px);
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+#toast.show{
+
+    transform:
+        translateY(0);
+
+    opacity:1;
+}
+
+/* ================= TOP BUTTON ================= */
+
+#topButton{
+
+    position:fixed;
+
+    left:20px;
+    bottom:20px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:0;
+
+    background:#d4af37;
+
+    color:#000;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:2000;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    nav{
+        gap:4px;
+    }
+
+    nav a{
+        font-size:13px;
+        padding:6px;
+    }
+
+    .hero{
+        min-height:580px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .filter-box{
+        align-items:stretch;
+    }
+
+    .filter-item{
+        width:100%;
+    }
+
+    .filter-item input,
+    .filter-item select{
+        width:100%;
+    }
+
+    .product{
+        max-width:350px;
+        width:100%;
+        margin:auto;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAV ================= -->
+
+<nav>
+
+<a href="#home">
+خانه
+</a>
+
+<a href="#products">
+محصولات
+</a>
+
+<a href="#about">
+درباره ما
+</a>
+
+<a href="#contact">
+تماس
+</a>
+
+<button
+class="nav-cart"
+onclick="openCart()"
+
+>
+
+🛒 سبد خرید <span id="cartCount">0</span> </button>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section
+    id="home"
+    class="hero"
+>
+
+<h1>
+طلا و جواهرات شایلی ✨
+</h1>
+
+<p>
+زیبایی، اصالت و درخشش در کنار شما
+</p>
+
+<img
+src="gold.jpg"
+alt="طلا و جواهرات شایلی"
+onerror="
+this.src='https://placehold.co/600x400/111/d4af37?text=SHAYLI'
+"
+
+>
+
+<button
+class="gold-btn"
+onclick="
+document
+.getElementById('products')
+.scrollIntoView()
+"
+
+>
+
+مشاهده محصولات </button>
+
+</section>
+
+<!-- ================= INFO ================= -->
+
+<section>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<h3>
+📍 آدرس
+</h3>
+
+<p>
+فلاورجان
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>
+📞 تلفن
+</h3>
+
+<p dir="ltr">
+09920229942
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>
+🕐 ساعت کاری
+</h3>
+
+<p>
+هر روز ۹ صبح تا ۹ شب
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>
+💎 کیفیت
+</h3>
+
+<p>
+ارائه محصولات باکیفیت
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="products">
+
+<h2 class="section-title">
+💎 محصولات شایلی
+</h2>
+
+<div class="search-box">
+
+<input
+id="searchInput"
+type="text"
+placeholder="🔍 جستجوی انگشتر، گردنبند، دستبند..."
+oninput="applyFilters()"
+
+>
+
+</div>
+
+<div class="filter-box">
+
+<div class="filter-item">
+
+<label>
+حداقل قیمت
+</label>
+
+<input
+id="minPrice"
+type="number"
+placeholder="مثلاً 40000000"
+oninput="applyFilters()"
+
+>
+
+</div>
+
+<div class="filter-item">
+
+<label>
+حداکثر قیمت
+</label>
+
+<input
+id="maxPrice"
+type="number"
+placeholder="مثلاً 60000000"
+oninput="applyFilters()"
+
+>
+
+</div>
+
+<div class="filter-item">
+
+<label>
+مرتب‌سازی
+</label>
+
+<select
+id="sortSelect"
+onchange="applyFilters()"
+
+>
+
+<option value="default">
+پیش‌فرض
+</option>
+
+<option value="cheap">
+ارزان‌ترین
+</option>
+
+<option value="expensive">
+گران‌ترین
+</option>
+
+</select>
+
+</div>
+
+<button
+class="gold-btn"
+onclick="resetFilters()"
+
+>
+
+پاک کردن فیلتر </button>
+
+</div>
+
+<div
+    id="productsContainer"
+    class="products"
+>
+</div>
+
+<p
+    id="noProducts"
+    style="
+        display:none;
+        color:#aaa;
+        margin-top:30px;
+    "
+>
+محصولی در این محدوده پیدا نشد.
+</p>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    id="about"
+    class="about"
+>
+
+<h2 class="section-title">
+درباره ما
+</h2>
+
+<div class="about-content">
+
+<p>
+طلا و جواهرات شایلی با هدف ارائه
+محصولات زیبا و باکیفیت فعالیت می‌کند.
+</p>
+
+<p>
+برای اطلاع از قیمت و موجودی،
+با فروشگاه تماس بگیرید.
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<h2 class="section-title">
+📞 تماس با شایلی
+</h2>
+
+<p>
+📍 فلاورجان
+</p>
+
+<a
+class="phone"
+href="tel:09920229942"
+
+>
+
+09920229942 </a>
+
+<div class="contact-buttons">
+
+<a
+class="gold-btn"
+href="tel:09920229942"
+
+>
+
+📞 تماس مستقیم </a>
+
+<button
+class="gold-btn"
+onclick="copyPhone()"
+
+>
+
+📋 کپی شماره </button>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+© 2026 طلا و جواهرات شایلی
+</p>
+
+<p>
+فلاورجان | 09920229942
+</p>
+
+</footer>
+
+<!-- ================= CART ================= -->
+
+<div
+    id="cartModal"
+    class="modal"
+>
+
+<div class="modal-box">
+
+<button
+class="close"
+onclick="closeCart()"
+
+>
+
+× </button>
+
+<h2 class="section-title">
+🛒 سبد خرید
+</h2>
+
+<div id="cartItems">
+</div>
+
+<div
+    id="cartTotal"
+    class="total"
+>
+مجموع: ۰ تومان
+</div>
+
+<button
+class="gold-btn"
+onclick="checkout()"
+
+>
+
+📦 ثبت سفارش </button>
+
+</div>
+
+</div>
+
+<!-- ================= TOAST ================= -->
+
+<div id="toast">
+عملیات انجام شد
+</div>
+
+<button
+id="topButton"
+onclick="
+window.scrollTo({
+top:0,
+behavior:'smooth'
+})
+"
+
+>
+
+↑ </button>
+
+<script>
+
+/* =====================================================
+   محصولات اولیه
+   بعداً می‌توانیم این قسمت را به پنل مدیریت وصل کنیم.
+===================================================== */
+
+const products = [
+
+{
+    id:1,
+    name:"انگشتر طلا",
+    description:"انگشتر طلا با طراحی زیبا",
+    price:40000000,
+    image:"ring.jpg",
+    available:true
+},
+
+{
+    id:2,
+    name:"گردنبند طلا",
+    description:"گردنبند طلا با طراحی شیک",
+    price:55000000,
+    image:"necklace.jpg",
+    available:true
+},
+
+{
+    id:3,
+    name:"دستبند طلا",
+    description:"دستبند طلا در مدل‌های مختلف",
+    price:60000000,
+    image:"bracelet.jpg",
+    available:true
+}
+
+];
+
+
+/* ================= CART ================= */
+
+let cart =
+    JSON.parse(
+        localStorage.getItem(
+            "shayli_cart"
+        ) || "[]"
+    );
+
+
+/* ================= FAVORITES ================= */
+
+let favorites =
+    JSON.parse(
+        localStorage.getItem(
+            "shayli_favorites"
+        ) || "[]"
+    );
+
+
+/* ================= PRICE ================= */
+
+function formatPrice(price){
+
+    return Number(price)
+        .toLocaleString("fa-IR")
+        + " تومان";
+
+}
+
+
+/* ================= ESCAPE ================= */
+
+function escapeHTML(text){
+
+    return String(text)
+
+        .replaceAll("&","&amp;")
+
+        .replaceAll("<","&lt;")
+
+        .replaceAll(">","&gt;")
+
+        .replaceAll('"',"&quot;")
+
+        .replaceAll("'","&#039;");
+
+}
+
+
+/* ================= RENDER ================= */
+
+function renderProducts(list){
+
+    const container =
+        document.getElementById(
+            "productsContainer"
+        );
+
+    const noProducts =
+        document.getElementById(
+            "noProducts"
+        );
+
+
+    if(list.length === 0){
+
+        container.innerHTML = "";
+
+        noProducts.style.display =
+            "block";
+
+        return;
+
+    }
+
+
+    noProducts.style.display =
+        "none";
+
+
+    container.innerHTML =
+        list.map(product => {
+
+            const isFavorite =
+                favorites.includes(
+                    product.id
+                );
+
+
+            return `
+
+            <article class="product">
+
+                <button
+                    class="
+                        favorite
+                        ${isFavorite ? "active":""}
+                    "
+                    onclick="
+                        toggleFavorite(
+                            ${product.id}
+                        )
+                    "
+                    aria-label="علاقه‌مندی"
+                >
+                    ${isFavorite ? "♥":"♡"}
+                </button>
+
+
+                <img
+                    src="${escapeHTML(product.image)}"
+                    alt="${escapeHTML(product.name)}"
+                    onerror="
+                        this.src='https://placehold.co/400x400/111/d4af37?text=SHAYLI'
+                    "
+                >
+
+
+                <h3>
+                    ${escapeHTML(product.name)}
+                </h3>
+
+
+                <p class="product-description">
+                    ${escapeHTML(product.description)}
+                </p>
+
+
+                <p class="product-price">
+                    ${formatPrice(product.price)}
+                </p>
+
+
+                ${
+                    product.available
+
+                    ?
+
+                    `
+                    <p class="stock">
+                        ✓ موجود
+                    </p>
+
+                    <button
+                        class="gold-btn"
+                        onclick="
+                            addToCart(
+                                ${product.id}
+                            )
+                        "
+                    >
+                        🛒 افزودن به سبد
+                    </button>
+                    `
+
+                    :
+
+                    `
+                    <p class="stock out-stock">
+                        ✕ ناموجود
+                    </p>
+                    `
+
+                }
+
+            </article>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* ================= FILTER ================= */
+
+function applyFilters(){
+
+    const search =
+        document
+        .getElementById(
+            "searchInput"
+        )
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    const min =
+        Number(
+            document
+            .getElementById(
+                "minPrice"
+            )
+            .value
+        ) || 0;
+
+
+    const maxInput =
+        document
+        .getElementById(
+            "maxPrice"
+        )
+        .value;
+
+
+    const max =
+        maxInput === ""
+            ? Infinity
+            : Number(maxInput);
+
+
+    const sort =
+        document
+        .getElementById(
+            "sortSelect"
+        )
+        .value;
+
+
+    let result =
+        products.filter(
+            product => {
+
+                const text =
+                    (
+                        product.name +
+                        " " +
+                        product.description
+                    )
+                    .toLowerCase();
+
+
+                return (
+
+                    product.available &&
+
+                    text.includes(search) &&
+
+                    product.price >= min &&
+
+                    product.price <= max
+
+                );
+
+            }
+        );
+
+
+    if(sort === "cheap"){
+
+        result.sort(
+            (a,b) =>
+                a.price - b.price
+        );
+
+    }
+
+
+    if(sort === "expensive"){
+
+        result.sort(
+            (a,b) =>
+                b.price - a.price
+        );
+
+    }
+
+
+    renderProducts(result);
+
+}
+
+
+/* ================= RESET ================= */
+
+function resetFilters(){
+
+    document.getElementById(
+        "searchInput"
+    ).value = "";
+
+    document.getElementById(
+        "minPrice"
+    ).value = "";
+
+    document.getElementById(
+        "maxPrice"
+    ).value = "";
+
+    document.getElementById(
+        "sortSelect"
+    ).value = "default";
+
+
+    applyFilters();
+
+}
+
+
+/* ================= FAVORITE ================= */
+
+function toggleFavorite(id){
+
+    if(
+        favorites.includes(id)
+    ){
+
+        favorites =
+            favorites.filter(
+                item => item !== id
+            );
+
+        showToast(
+            "از علاقه‌مندی‌ها حذف شد"
+        );
+
+    }else{
+
+        favorites.push(id);
+
+        showToast(
+            "❤️ به علاقه‌مندی‌ها اضافه شد"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "shayli_favorites",
+        JSON.stringify(favorites)
+    );
+
+
+    applyFilters();
+
+}
+
+
+/* ================= ADD CART ================= */
+
+function addToCart(id){
+
+    const product =
+        products.find(
+            item =>
+                item.id === id
+        );
+
+
+    if(!product) return;
+
+
+    const existing =
+        cart.find(
+            item =>
+                item.id === id
+        );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+
+            id:product.id,
+
+            name:product.name,
+
+            price:product.price,
+
+            image:product.image,
+
+            quantity:1
+
+        });
+
+    }
+
+
+    saveCart();
+
+    showToast(
+        "✅ محصول به سبد اضافه شد"
+    );
+
+}
+
+
+/* ================= SAVE CART ================= */
+
+function saveCart(){
+
+    localStorage.setItem(
+        "shayli_cart",
+        JSON.stringify(cart)
+    );
+
+    updateCartCount();
+
+}
+
+
+/* ================= CART COUNT ================= */
+
+function updateCartCount(){
+
+    const count =
+        cart.reduce(
+            (sum,item) =>
+                sum + item.quantity,
+            0
+        );
+
+
+    document.getElementById(
+        "cartCount"
+    ).textContent =
+        count.toLocaleString("fa-IR");
+
+}
+
+
+/* ================= OPEN CART ================= */
+
+function openCart(){
+
+    document.getElementById(
+        "cartModal"
+    ).classList.add("show");
+
+
+    renderCart();
+
+}
+
+
+/* ================= CLOSE CART ================= */
+
+function closeCart(){
+
+    document.getElementById(
+        "cartModal"
+    ).classList.remove("show");
+
+}
+
+
+/* ================= RENDER CART ================= */
+
+function renderCart(){
+
+    const container =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    if(cart.length === 0){
+
+        container.innerHTML =
+            "<p>سبد خرید خالی است.</p>";
+
+        document.getElementById(
+            "cartTotal"
+        ).textContent =
+            "مجموع: ۰ تومان";
+
+        return;
+
+    }
+
+
+    container.innerHTML =
+        cart.map(
+            (item,index) => `
+
+            <div class="cart-item">
+
+                <img
+                    src="${escapeHTML(item.image)}"
+                    onerror="
+                        this.src='https://placehold.co/100x100/111/d4af37?text=SHAYLI'
+                    "
+                >
+
+                <div class="cart-info">
+
+                    <strong>
+                        ${escapeHTML(item.name)}
+                    </strong>
+
+                    <br>
+
+                    ${formatPrice(item.price)}
+
+                    <div class="qty">
+
+                        <button
+                            onclick="
+                                changeQuantity(
+                                    ${index},
+                                    1
+                                )
+                            "
+                        >
+                            +
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            onclick="
+                                changeQuantity(
+                                    ${index},
+                                    -1
+                                )
+                            "
+                        >
+                            −
+                        </button>
+
+                        <button
+                            onclick="
+                                removeCart(
+                                    ${index}
+                                )
+                            "
+                        >
+                            🗑️
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            `
+        ).join("");
+
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+                sum +
+                item.price *
+                item.quantity,
+            0
+        );
+
+
+    document.getElementById(
+        "cartTotal"
+    ).textContent =
+        "مجموع: " +
+        formatPrice(total);
+
+}
+
+
+/* ================= QUANTITY ================= */
+
+function changeQuantity(
+    index,
+    change
+){
+
+    cart[index].quantity +=
+        change;
+
+
+    if(
+        cart[index].quantity <= 0
+    ){
+
+        cart.splice(
+            index,
+            1
+        );
+
+    }
+
+
+    saveCart();
+
+    renderCart();
+
+}
+
+
+/* ================= REMOVE ================= */
+
+function removeCart(index){
+
+    cart.splice(
+        index,
+        1
+    );
+
+    saveCart();
+
+    renderCart();
+
+    showToast(
+        "محصول حذف شد"
+    );
+
+}
+
+
+/* ================= CHECKOUT ================= */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        showToast(
+            "سبد خرید خالی است"
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "سلام، برای ثبت سفارش از سایت شایلی پیام می‌دهم:%0A%0A";
+
+
+    cart.forEach(item => {
+
+        message +=
+            "• " +
+            item.name +
+            " × " +
+            item.quantity +
+            "%0A";
+
+    });
+
+
+    message +=
+        "%0Aلطفاً برای هماهنگی سفارش با من تماس بگیرید.";
+
+
+    window.open(
+        "https://wa.me/989920229942?text=" +
+        message,
+        "_blank"
+    );
+
+}
+
+
+/* ================= COPY PHONE ================= */
+
+function copyPhone(){
+
+    navigator.clipboard
+        .writeText(
+            "09920229942"
+        )
+        .then(
+            () => {
+
+                showToast(
+                    "📋 شماره کپی شد"
+                );
+
+            }
+        )
+        .catch(
+            () => {
+
+                showToast(
+                    "شماره: 09920229942"
+                );
+
+            }
+        );
+
+}
+
+
+/* ================= TOAST ================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toastTimer =
+        setTimeout(
+            () => {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            2500
+        );
+
+}
+
+
+/* ================= TOP BUTTON ================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        const button =
+            document.getElementById(
+                "topButton"
+            );
+
+
+        button.style.display =
+            window.scrollY > 400
+                ? "block"
+                : "none";
+
+    }
+);
+
+
+/* ================= START ================= */
+
+renderProducts(products);
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>
