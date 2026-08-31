@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>علاقه‌مندی‌ها | شایلی</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial;
+    background:#080808;
+    color:white;
+    padding-bottom:70px;
+}
+
+header{
+    padding:25px;
+    text-align:center;
+    border-bottom:1px solid #80631d;
+}
+
+header h1{
+    color:#e5bf4c;
+}
+
+.container{
+    width:92%;
+    max-width:1000px;
+    margin:auto;
+}
+
+.title{
+    color:#e5bf4c;
+    margin:30px 0 20px;
+    border-right:4px solid #d3aa35;
+    padding-right:10px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#141414;
+    border:1px solid #333;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.info{
+    padding:15px;
+}
+
+.info h3{
+    color:#e5bf4c;
+}
+
+.remove{
+    width:100%;
+    margin-top:12px;
+    padding:10px;
+
+    background:#641818;
+    color:white;
+
+    border:none;
+    border-radius:9px;
+
+    cursor:pointer;
+}
+
+.empty{
+    background:#141414;
+    border:1px dashed #555;
+    border-radius:15px;
+
+    text-align:center;
+    padding:45px;
+
+    color:#888;
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+
+    padding:12px 20px;
+
+    background:#d4aa35;
+    color:#111;
+
+    border-radius:11px;
+}
+
+@media(max-width:700px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>❤️ علاقه‌مندی‌های من</h1>
+
+</header>
+
+
+<div class="container">
+
+<h2 class="title">
+محصولات ذخیره‌شده
+</h2>
+
+<div id="list" class="products"></div>
+
+<a
+href="index.html"
+class="back">
+← برگشت به فروشگاه
+</a>
+
+</div>
+
+
+<script>
+
+const products=[
+
+{
+id:1,
+name:"انگشتر طلا",
+image:"ring.jpg"
+},
+
+{
+id:2,
+name:"دستبند طلا",
+image:"bracelet.jpg"
+},
+
+{
+id:3,
+name:"گردنبند طلا",
+image:"necklace.jpg"
+}
+
+];
+
+
+let favorites =
+JSON.parse(
+localStorage.getItem("shayliFavorites") || "[]"
+);
+
+
+function render(){
+
+    const list =
+    document.getElementById("list");
+
+    list.innerHTML="";
+
+
+    if(favorites.length===0){
+
+        list.className="";
+
+        list.innerHTML=
+        <div class="empty">
+        ❤️ هنوز محصولی در علاقه‌مندی‌ها ندارید.
+        </div>;
+
+        return;
+
+    }
+
+
+    list.className="products";
+
+
+    favorites.forEach(id=>{
+
+        const product =
+        products.find(
+            p=>p.id===id
+        );
+
+        if(!product) return;
+
+
+        const card =
+        document.createElement("div");
+
+        card.className="card";
+
+
+        card.innerHTML=
+
+        <img
+        src="${product.image}"
+        alt="${product.name}"
+        >
+
+        <div class="info">
+
+        <h3>
+        ${product.name}
+        </h3>
+
+        <button
+        class="remove"
+        onclick="removeFavorite(${id})">
+        حذف از علاقه‌مندی
+        </button>
+
+        </div>
+
+        ;
+
+
+        list.appendChild(card);
+
+    });
+
+}
+
+
+function removeFavorite(id){
+
+    favorites =
+    favorites.filter(
+        x=>x!==id
+    );
+
+    localStorage.setItem(
+        "shayliFavorites",
+        JSON.stringify(favorites)
+    );
+
+    render();
+
+}
+
+
+render();
+
+</script>
+
+</body>
+
+</html>
