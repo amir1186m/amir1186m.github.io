@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>ثبت‌نام | طلا و جواهرات شایلی</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+
+        background:
+            radial-gradient(
+                circle at top,
+                #30240d 0%,
+                #0b0b0b 50%,
+                #050505 100%
+            );
+
+        color: #fff;
+        font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 430px;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .logo-icon {
+        width: 72px;
+        height: 72px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0 auto 12px;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                145deg,
+                #f5d86b,
+                #96701b
+            );
+
+        font-size: 32px;
+
+        box-shadow:
+            0 10px 40px rgba(220, 180, 60, .18);
+    }
+
+    .logo h1 {
+        color: #e6c354;
+        font-family: "Estedad", sans-serif;
+        font-size: 23px;
+        font-weight: 800;
+    }
+
+    .logo p {
+        color: #777;
+        font-size: 11px;
+        margin-top: 5px;
+    }
+
+    .card {
+        background: #121212;
+
+        border: 1px solid #342a12;
+
+        border-radius: 22px;
+
+        padding: 27px 23px;
+
+        box-shadow:
+            0 20px 70px rgba(0, 0, 0, .45);
+    }
+
+    .title {
+        color: #eee;
+        font-family: "Estedad", sans-serif;
+        font-size: 19px;
+        font-weight: 800;
+        margin-bottom: 6px;
+    }
+
+    .description {
+        color: #777;
+        font-size: 11px;
+        line-height: 1.9;
+        margin-bottom: 23px;
+    }
+
+    .field {
+        margin-bottom: 16px;
+    }
+
+    label {
+        display: block;
+        color: #bbb;
+        font-size: 11px;
+        margin-bottom: 7px;
+    }
+
+    .input {
+        width: 100%;
+
+        padding: 13px 14px;
+
+        border: 1px solid #333;
+        border-radius: 12px;
+
+        outline: none;
+
+        background: #090909;
+        color: #fff;
+
+        font-family: "Vazirmatn", sans-serif;
+        font-size: 12px;
+
+        transition: .2s;
+    }
+
+    .input::placeholder {
+        color: #555;
+    }
+
+    .input:focus {
+        border-color: #caa43a;
+
+        box-shadow:
+            0 0 0 3px rgba(202, 164, 58, .08);
+    }
+
+    .password-box {
+        position: relative;
+    }
+
+    .password-box .input {
+        padding-left: 50px;
+    }
+
+    .show-password {
+        position: absolute;
+
+        left: 10px;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        border: 0;
+        background: transparent;
+
+        color: #777;
+
+        cursor: pointer;
+
+        font-size: 17px;
+    }
+
+    .button {
+        width: 100%;
+
+        padding: 14px;
+
+        border: 0;
+        border-radius: 13px;
+
+        cursor: pointer;
+
+        background:
+            linear-gradient(
+                135deg,
+                #efd064,
+                #9c761d
+            );
+
+        color: #111;
+
+        font-family: "Estedad", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+
+        transition: .2s;
+    }
+
+    .button:hover {
+        transform: translateY(-2px);
+    }
+
+    .button:disabled {
+        opacity: .6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .message {
+        display: none;
+
+        margin-top: 15px;
+        padding: 11px;
+
+        border-radius: 10px;
+
+        font-size: 11px;
+        line-height: 1.8;
+
+        text-align: center;
+    }
+
+    .message.show {
+        display: block;
+    }
+
+    .message.error {
+        color: #ffb4b4;
+        background: #321515;
+        border: 1px solid #652828;
+    }
+
+    .message.success {
+        color: #afe8b8;
+        background: #12321a;
+        border: 1px solid #286337;
+    }
+
+    .login {
+        text-align: center;
+
+        margin-top: 18px;
+
+        color: #777;
+        font-size: 11px;
+    }
+
+    .login a {
+        color: #e5c354;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .back {
+        display: block;
+
+        text-align: center;
+
+        margin-top: 20px;
+
+        color: #777;
+
+        font-size: 11px;
+
+        text-decoration: none;
+    }
+
+    .back:hover {
+        color: #e5c354;
+    }
+
+    .security-note {
+        margin-top: 18px;
+
+        padding: 11px;
+
+        border-radius: 10px;
+
+        background: #17140c;
+        border: 1px solid #302710;
+
+        color: #888;
+
+        font-size: 9px;
+        line-height: 1.9;
+
+        text-align: center;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<div class="logo">
+
+    <div class="logo-icon">
+        💎
+    </div>
+
+    <h1>
+        طلا و جواهرات شایلی
+    </h1>
+
+    <p>
+        فروش آنلاین طلا و جواهرات
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="title">
+        ایجاد حساب کاربری
+    </div>
+
+    <div class="description">
+        برای خرید، مشاهده سفارش‌ها و مدیریت حساب خود ثبت‌نام کنید.
+    </div>
+
+
+    <form id="registerForm">
+
+        <div class="field">
+
+            <label for="name">
+                نام و نام خانوادگی
+            </label>
+
+            <input
+                id="name"
+                class="input"
+                type="text"
+                placeholder="مثلاً امیر احمدی"
+                autocomplete="name"
+                maxlength="80"
+                required
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="email">
+                ایمیل
+            </label>
+
+            <input
+                id="email"
+                class="input"
+                type="email"
+                placeholder="example@email.com"
+                autocomplete="email"
+                maxlength="150"
+                required
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label for="password">
+                رمز عبور
+            </label>
+
+            <div class="password-box">
+
+                <input
+                    id="password"
+                    class="input"
+                    type="password"
+                    placeholder="حداقل ۸ کاراکتر"
+                    autocomplete="new-password"
+                    minlength="8"
+                    maxlength="128"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="show-password"
+                    id="showPassword"
+                    aria-label="نمایش رمز عبور"
+                >
+                    👁️
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="registerButton"
+            class="button"
+            type="submit"
+        >
+            ساخت حساب
+        </button>
+
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+    </form>
+
+
+    <div class="login">
+
+        قبلاً حساب ساخته‌ای؟
+
+        <a href="login.html">
+            ورود به حساب
+        </a>
+
+    </div>
+
+
+    <div class="security-note">
+        🔐 اطلاعات حساب شما برای احراز هویت استفاده می‌شود.
+    </div>
+
+</div>
+
+
+<a
+    href="index.html"
+    class="back"
+>
+    ← بازگشت به صفحه اصلی
+</a>
+```
+
+</div>
+
+<script>
+
+const API_URL =
+    "https://shayli-prices.amir-sepahan1390.workers.dev";
+
+
+const form =
+    document.getElementById("registerForm");
+
+const nameInput =
+    document.getElementById("name");
+
+const emailInput =
+    document.getElementById("email");
+
+const passwordInput =
+    document.getElementById("password");
+
+const registerButton =
+    document.getElementById("registerButton");
+
+const message =
+    document.getElementById("message");
+
+const showPasswordButton =
+    document.getElementById("showPassword");
+
+
+/* ==========================
+   SHOW MESSAGE
+========================== */
+
+function showMessage(text, type) {
+
+    message.textContent = text;
+
+    message.className =
+        "message show " + type;
+}
+
+
+/* ==========================
+   PASSWORD VISIBILITY
+========================== */
+
+showPasswordButton.addEventListener(
+    "click",
+    function () {
+
+        if (
+            passwordInput.type === "password"
+        ) {
+
+            passwordInput.type = "text";
+
+            showPasswordButton.textContent =
+                "🙈";
+
+        } else {
+
+            passwordInput.type = "password";
+
+            showPasswordButton.textContent =
+                "👁️";
+        }
+    }
+);
+
+
+/* ==========================
+   REGISTER
+========================== */
+
+form.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+        const name =
+            nameInput.value.trim();
+
+        const email =
+            emailInput.value
+                .trim()
+                .toLowerCase();
+
+        const password =
+            passwordInput.value;
+
+
+        if (name.length < 2) {
+
+            showMessage(
+                "لطفاً نام و نام خانوادگی را وارد کنید.",
+                "error"
+            );
+
+            nameInput.focus();
+
+            return;
+        }
+
+
+        if (password.length < 8) {
+
+            showMessage(
+                "رمز عبور باید حداقل ۸ کاراکتر باشد.",
+                "error"
+            );
+
+            passwordInput.focus();
+
+            return;
+        }
+
+
+        registerButton.disabled = true;
+
+        registerButton.textContent =
+            "در حال ساخت حساب...";
+
+
+        showMessage(
+            "در حال ایجاد حساب کاربری...",
+            "success"
+        );
+
+
+        try {
+
+            const response =
+                await fetch(
+                    API_URL + "/api/register",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        /*
+                         * مهم:
+                         * اینجا credentials نداریم.
+                         * چون Worker فعلی از CORS *
+                         * استفاده می‌کند.
+                         */
+
+                        body: JSON.stringify({
+                            name: name,
+                            email: email,
+                            password: password
+                        })
+                    }
+                );
+
+
+            let data;
+
+            try {
+
+                data =
+                    await response.json();
+
+            } catch {
+
+                data = {};
+            }
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.error ||
+                    "ثبت‌نام انجام نشد."
+                );
+            }
+
+
+            showMessage(
+                "✅ حساب شما با موفقیت ساخته شد!",
+                "success"
+            );
+
+
+            registerButton.textContent =
+                "حساب ساخته شد ✓";
+
+
+            /*
+             * چون فعلاً درخواست بدون credentials است،
+             * کوکی cross-origin برای ورود خودکار
+             * قابل اتکا نیست.
+             *
+             * بنابراین بعد از ثبت‌نام،
+             * کاربر را به صفحه ورود می‌فرستیم.
+             */
+
+            setTimeout(
+                function () {
+
+                    window.location.href =
+                        "login.html";
+
+                },
+                1200
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "REGISTER ERROR:",
+                error
+            );
+
+
+            let text =
+                error.message ||
+                "خطا در ارتباط با سرور.";
+
+
+            if (
+                error instanceof TypeError
+            ) {
+
+                text =
+                    "ارتباط با سرور برقرار نشد. اتصال اینترنت و تنظیمات CORS را بررسی کنید.";
+            }
+
+
+            showMessage(
+                text,
+                "error"
+            );
+
+
+            registerButton.disabled =
+                false;
+
+            registerButton.textContent =
+                "ساخت حساب";
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
