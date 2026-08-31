@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#080808">
+
+<title>تنظیمات | طلا و جواهرات شایلی</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(
+        circle at top,
+        #241d0c 0%,
+        #080808 55%
+    );
+
+    color:#fff;
+
+    font-family:
+    "Vazirmatn",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    padding-bottom:90px;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    background:#0c0c0c;
+
+    border-bottom:
+    1px solid #332911;
+}
+
+.logo{
+
+    font-size:30px;
+
+    margin-bottom:5px;
+}
+
+.brand{
+
+    color:#e5bf4c;
+
+    font-family:"Estedad",sans-serif;
+
+    font-size:21px;
+
+    font-weight:800;
+}
+
+.subtitle{
+
+    color:#777;
+
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.container{
+
+    width:92%;
+
+    max-width:750px;
+
+    margin:30px auto;
+}
+
+
+/* ================= TITLE ================= */
+
+.page-title{
+
+    color:#e5bf4c;
+
+    font-family:"Estedad",sans-serif;
+
+    font-size:24px;
+
+    font-weight:800;
+
+    border-right:
+    4px solid #d4aa35;
+
+    padding-right:12px;
+
+    margin-bottom:22px;
+}
+
+
+/* ================= SECTION ================= */
+
+.settings-section{
+
+    margin-bottom:18px;
+
+    background:#141414;
+
+    border:
+    1px solid #303030;
+
+    border-radius:18px;
+
+    overflow:hidden;
+}
+
+.section-title{
+
+    padding:17px 20px;
+
+    color:#e5bf4c;
+
+    font-family:"Estedad",sans-serif;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    border-bottom:
+    1px solid #292929;
+}
+
+
+/* ================= ROW ================= */
+
+.setting-row{
+
+    min-height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:14px 20px;
+
+    border-bottom:
+    1px solid #252525;
+}
+
+.setting-row:last-child{
+
+    border-bottom:0;
+}
+
+.setting-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:0;
+}
+
+.setting-icon{
+
+    width:40px;
+
+    height:40px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:#201b0e;
+
+    font-size:20px;
+}
+
+.setting-text{
+
+    min-width:0;
+}
+
+.setting-text strong{
+
+    display:block;
+
+    color:#ddd;
+
+    font-size:13px;
+
+    margin-bottom:4px;
+}
+
+.setting-text small{
+
+    display:block;
+
+    color:#777;
+
+    font-size:10px;
+
+    line-height:1.7;
+}
+
+
+/* ================= SWITCH ================= */
+
+.switch{
+
+    position:relative;
+
+    width:48px;
+
+    height:26px;
+
+    flex-shrink:0;
+}
+
+.switch input{
+
+    display:none;
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    cursor:pointer;
+
+    background:#333;
+
+    border-radius:30px;
+
+    transition:.2s;
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:20px;
+
+    height:20px;
+
+    right:3px;
+
+    top:3px;
+
+    border-radius:50%;
+
+    background:#aaa;
+
+    transition:.2s;
+}
+
+.switch input:checked + .slider{
+
+    background:#9c771d;
+}
+
+.switch input:checked + .slider::before{
+
+    transform:
+    translateX(-22px);
+
+    background:#f0d36a;
+}
+
+
+/* ================= SELECT ================= */
+
+.select{
+
+    background:#0b0b0b;
+
+    color:#ddd;
+
+    border:
+    1px solid #3a3a3a;
+
+    border-radius:9px;
+
+    padding:9px 12px;
+
+    outline:none;
+
+    font-family:"Vazirmatn",sans-serif;
+
+    font-size:11px;
+}
+
+.select:focus{
+
+    border-color:#d4aa35;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.actions{
+
+    display:grid;
+
+    gap:11px;
+
+    margin-top:20px;
+}
+
+.button{
+
+    width:100%;
+
+    border:0;
+
+    border-radius:12px;
+
+    padding:13px;
+
+    cursor:pointer;
+
+    font-family:"Estedad",sans-serif;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        135deg,
+        #e5bf4c,
+        #987215
+    );
+
+    color:#111;
+
+    transition:.2s;
+}
+
+.button:hover{
+
+    transform:
+    translateY(-2px);
+}
+
+.button.secondary{
+
+    background:#181818;
+
+    border:
+    1px solid #493912;
+
+    color:#e5bf4c;
+}
+
+.button.danger{
+
+    background:#281414;
+
+    border:
+    1px solid #5b2929;
+
+    color:#ff9d9d;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.message{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-size:11px;
+}
+
+.message.show{
+
+    display:block;
+}
+
+.message.success{
+
+    color:#a9e8b5;
+
+    background:#14351d;
+
+    border:
+    1px solid #286437;
+}
+
+
+/* ================= BOTTOM ================= */
+
+.bottom{
+
+    position:fixed;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    z-index:5000;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    padding:8px 4px;
+
+    background:
+    rgba(15,15,15,.98);
+
+    backdrop-filter:blur(10px);
+
+    border-top:
+    1px solid #493912;
+}
+
+.bottom a{
+
+    min-width:55px;
+
+    color:#999;
+
+    text-align:center;
+
+    font-size:9px;
+}
+
+.bottom span{
+
+    display:block;
+
+    font-size:20px;
+
+    margin-bottom:2px;
+}
+
+.bottom a:hover{
+
+    color:#e5bf4c;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:520px){
+
+    .setting-row{
+
+        padding:13px 14px;
+    }
+
+    .setting-text strong{
+
+        font-size:12px;
+    }
+
+    .setting-text small{
+
+        font-size:9px;
+    }
+
+    .page-title{
+
+        font-size:21px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+⚙️
+</div>
+
+<div class="brand">
+طلا و جواهرات شایلی
+</div>
+
+<div class="subtitle">
+تنظیمات حساب کاربری
+</div>
+
+</header>
+
+<div class="container">
+
+<h1 class="page-title">
+⚙️ تنظیمات
+</h1>
+
+<!-- ================= NOTIFICATIONS ================= -->
+
+<section class="settings-section">
+
+<div class="section-title">
+🔔 اعلان‌ها
+</div>
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<div class="setting-icon">
+💰
+</div>
+
+<div class="setting-text">
+
+<strong>
+اعلان تغییر قیمت طلا
+</strong>
+
+<small>
+در صورت تغییر قیمت، اطلاع‌رسانی شود.
+</small>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="goldAlert"
+
+>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<div class="setting-icon">
+📢
+</div>
+
+<div class="setting-text">
+
+<strong>
+اعلان‌های فروشگاه
+</strong>
+
+<small>
+محصولات و اطلاعیه‌های جدید فروشگاه.
+</small>
+
+</div>
+
+</div>
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="shopAlert"
+checked
+
+>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</section>
+
+<!-- ================= APPEARANCE ================= -->
+
+<section class="settings-section">
+
+<div class="section-title">
+🎨 ظاهر سایت
+</div>
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<div class="setting-icon">
+🌙
+</div>
+
+<div class="setting-text">
+
+<strong>
+حالت نمایش
+</strong>
+
+<small>
+انتخاب ظاهر سایت.
+</small>
+
+</div>
+
+</div>
+
+<select
+id="theme"
+class="select"
+
+>
+
+<option value="dark">
+تیره
+</option>
+
+<option value="system">
+سیستم
+</option>
+
+</select>
+
+</div>
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<div class="setting-icon">
+🔢
+</div>
+
+<div class="setting-text">
+
+<strong>
+نمایش قیمت‌ها
+</strong>
+
+<small>
+انتخاب واحد نمایش قیمت‌ها.
+</small>
+
+</div>
+
+</div>
+
+<select
+id="priceUnit"
+class="select"
+
+>
+
+<option value="rial">
+ریال
+</option>
+
+<option value="toman">
+تومان
+</option>
+
+</select>
+
+</div>
+
+</section>
+
+<!-- ================= ACCOUNT ================= -->
+
+<section class="settings-section">
+
+<div class="section-title">
+👤 حساب کاربری
+</div>
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<div class="setting-icon">
+🔐
+</div>
+
+<div class="setting-text">
+
+<strong>
+تغییر رمز عبور
+</strong>
+
+<small>
+رمز عبور حساب خود را تغییر دهید.
+</small>
+
+</div>
+
+</div>
+
+<button
+class="button secondary"
+style="width:auto;padding:8px 13px;"
+onclick="changePassword()"
+
+>
+
+تغییر
+
+</button>
+
+</div>
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<div class="setting-icon">
+🗑️
+</div>
+
+<div class="setting-text">
+
+<strong>
+حذف حساب
+</strong>
+
+<small>
+این گزینه بعداً به سیستم حساب کاربری متصل می‌شود.
+</small>
+
+</div>
+
+</div>
+
+<button
+class="button danger"
+style="width:auto;padding:8px 13px;"
+onclick="deleteAccount()"
+
+>
+
+حذف
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= ACTIONS ================= -->
+
+<div class="actions">
+
+<button
+class="button"
+onclick="saveSettings()"
+
+>
+
+💾 ذخیره تنظیمات
+
+</button>
+
+<a
+href="account.html"
+class="button secondary"
+style="text-align:center;"
+
+>
+
+← بازگشت به حساب کاربری
+
+</a>
+
+<div
+id="message"
+class="message"
+></div>
+
+</div>
+
+</div>
+
+<!-- ================= BOTTOM MENU ================= -->
+
+<div class="bottom">
+
+<a href="index.html">
+
+<span>🏠</span>
+
+خانه
+
+</a>
+
+<a href="shop.html">
+
+<span>💍</span>
+
+فروشگاه
+
+</a>
+
+<a href="calculator.html">
+
+<span>🧮</span>
+
+حسابگر
+
+</a>
+
+<a href="cart.html">
+
+<span>🛒</span>
+
+سبد خرید
+
+</a>
+
+<a href="account.html">
+
+<span>👤</span>
+
+حساب من
+
+</a>
+
+</div>
+
+<script>
+
+
+/* =========================================
+   LOAD SETTINGS
+========================================= */
+
+function loadSettings(){
+
+    const goldAlert =
+    localStorage.getItem(
+        "shayli_gold_alert"
+    );
+
+    const shopAlert =
+    localStorage.getItem(
+        "shayli_shop_alert"
+    );
+
+    const theme =
+    localStorage.getItem(
+        "shayli_theme"
+    );
+
+    const priceUnit =
+    localStorage.getItem(
+        "shayli_price_unit"
+    );
+
+
+    if(
+        goldAlert !== null
+    ){
+
+        document.getElementById(
+            "goldAlert"
+        ).checked =
+        goldAlert === "true";
+
+    }
+
+
+    if(
+        shopAlert !== null
+    ){
+
+        document.getElementById(
+            "shopAlert"
+        ).checked =
+        shopAlert === "true";
+
+    }
+
+
+    if(theme){
+
+        document.getElementById(
+            "theme"
+        ).value =
+        theme;
+
+    }
+
+
+    if(priceUnit){
+
+        document.getElementById(
+            "priceUnit"
+        ).value =
+        priceUnit;
+
+    }
+
+}
+
+
+/* =========================================
+   SAVE SETTINGS
+========================================= */
+
+function saveSettings(){
+
+    const goldAlert =
+    document.getElementById(
+        "goldAlert"
+    ).checked;
+
+
+    const shopAlert =
+    document.getElementById(
+        "shopAlert"
+    ).checked;
+
+
+    const theme =
+    document.getElementById(
+        "theme"
+    ).value;
+
+
+    const priceUnit =
+    document.getElementById(
+        "priceUnit"
+    ).value;
+
+
+    localStorage.setItem(
+        "shayli_gold_alert",
+        goldAlert
+    );
+
+
+    localStorage.setItem(
+        "shayli_shop_alert",
+        shopAlert
+    );
+
+
+    localStorage.setItem(
+        "shayli_theme",
+        theme
+    );
+
+
+    localStorage.setItem(
+        "shayli_price_unit",
+        priceUnit
+    );
+
+
+    showMessage(
+        "تنظیمات با موفقیت ذخیره شد ✅"
+    );
+
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+function showMessage(text){
+
+    const message =
+    document.getElementById(
+        "message"
+    );
+
+    message.className =
+    "message show success";
+
+    message.textContent =
+    text;
+
+
+    setTimeout(
+        function(){
+
+            message.className =
+            "message";
+
+        },
+        3000
+    );
+
+}
+
+
+/* =========================================
+   CHANGE PASSWORD
+========================================= */
+
+function changePassword(){
+
+    alert(
+        "تغییر رمز عبور بعد از اتصال سیستم حساب کاربری فعال می‌شود."
+    );
+
+}
+
+
+/* =========================================
+   DELETE ACCOUNT
+========================================= */
+
+function deleteAccount(){
+
+    const answer =
+    confirm(
+        "حذف حساب کاربری در نسخه نهایی دائمی خواهد بود. فعلاً این گزینه فعال نیست."
+    );
+
+
+    if(answer){
+
+        alert(
+            "این قابلیت بعد از اتصال حساب کاربری به دیتابیس فعال می‌شود."
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   START
+========================================= */
+
+loadSettings();
+
+</script>
+
+</body>
+
+</html>
