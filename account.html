@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    حساب کاربری | طلا و جواهرات شایلی
+</title>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    body {
+
+        min-height: 100vh;
+
+        background:
+            radial-gradient(
+                circle at top,
+                #30240d 0%,
+                #0b0b0b 45%,
+                #050505 100%
+            );
+
+        color: #fff;
+
+        font-family:
+            "Vazirmatn",
+            Tahoma,
+            Arial,
+            sans-serif;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 100;
+
+        background:
+            rgba(8,8,8,.92);
+
+        backdrop-filter:
+            blur(15px);
+
+        border-bottom:
+            1px solid #29220f;
+    }
+
+
+    .header-inner {
+
+        max-width: 1100px;
+
+        margin: auto;
+
+        min-height: 72px;
+
+        padding:
+            10px 20px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+    }
+
+
+    .brand {
+
+        text-decoration: none;
+
+        color: #e6c354;
+
+        font-family:
+            "Estedad",
+            sans-serif;
+
+        font-weight: 800;
+
+        font-size: 16px;
+    }
+
+
+    .brand span {
+
+        display: block;
+
+        color: #777;
+
+        font-family:
+            "Vazirmatn",
+            sans-serif;
+
+        font-size: 9px;
+
+        font-weight: 400;
+
+        margin-top: 3px;
+    }
+
+
+    .user-icon {
+
+        width: 46px;
+
+        height: 46px;
+
+        border-radius: 50%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-decoration: none;
+
+        background:
+            linear-gradient(
+                145deg,
+                #efd064,
+                #94701b
+            );
+
+        color: #111;
+
+        font-size: 21px;
+
+        box-shadow:
+            0 7px 25px
+            rgba(220,180,60,.16);
+    }
+
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    main {
+
+        width: 100%;
+
+        max-width: 900px;
+
+        margin: auto;
+
+        padding:
+            35px 20px 60px;
+    }
+
+
+    .welcome {
+
+        margin-bottom: 25px;
+    }
+
+
+    .welcome small {
+
+        color: #777;
+
+        font-size: 11px;
+    }
+
+
+    .welcome h1 {
+
+        margin-top: 7px;
+
+        font-family:
+            "Estedad",
+            sans-serif;
+
+        font-size: 25px;
+
+        color: #f0d36c;
+    }
+
+
+    /* =========================
+       PROFILE
+    ========================= */
+
+    .profile {
+
+        position: relative;
+
+        overflow: hidden;
+
+        padding: 25px;
+
+        border-radius: 22px;
+
+        background:
+            linear-gradient(
+                145deg,
+                #171717,
+                #0e0e0e
+            );
+
+        border:
+            1px solid #3b3015;
+
+        box-shadow:
+            0 20px 60px
+            rgba(0,0,0,.4);
+
+        margin-bottom: 20px;
+    }
+
+
+    .profile::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 180px;
+
+        height: 180px;
+
+        border-radius: 50%;
+
+        background:
+            rgba(220,180,60,.06);
+
+        left: -70px;
+
+        top: -80px;
+    }
+
+
+    .profile-top {
+
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 18px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .avatar {
+
+        width: 70px;
+
+        height: 70px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background:
+            linear-gradient(
+                145deg,
+                #f1d268,
+                #95721e
+            );
+
+        color: #111;
+
+        font-size: 30px;
+
+        font-weight: 800;
+    }
+
+
+    .profile-name {
+
+        font-family:
+            "Estedad",
+            sans-serif;
+
+        font-size: 20px;
+
+        font-weight: 800;
+
+        color: #eee;
+    }
+
+
+    .profile-email {
+
+        color: #888;
+
+        font-size: 11px;
+
+        direction: ltr;
+
+        text-align: right;
+
+        margin-top: 5px;
+    }
+
+
+    .status {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        margin-top: 9px;
+
+        padding:
+            5px 10px;
+
+        border-radius: 20px;
+
+        background:
+            rgba(42,160,75,.12);
+
+        border:
+            1px solid #285d35;
+
+        color: #77d58b;
+
+        font-size: 10px;
+    }
+
+
+    .status-dot {
+
+        width: 7px;
+
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: #49c866;
+
+        box-shadow:
+            0 0 8px
+            rgba(73,200,102,.7);
+    }
+
+
+    /* =========================
+       ACCOUNT INFO
+    ========================= */
+
+    .section-title {
+
+        font-family:
+            "Estedad",
+            sans-serif;
+
+        font-size: 15px;
+
+        color: #ddd;
+
+        margin-bottom: 12px;
+    }
+
+
+    .info-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+
+    .info {
+
+        padding: 14px;
+
+        border-radius: 14px;
+
+        background: #0b0b0b;
+
+        border:
+            1px solid #292929;
+    }
+
+
+    .info-label {
+
+        display: block;
+
+        color: #666;
+
+        font-size: 9px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .info-value {
+
+        color: #eee;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        word-break: break-word;
+    }
+
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .cards {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 13px;
+
+        margin-top: 20px;
+    }
+
+
+    .card {
+
+        display: block;
+
+        text-decoration: none;
+
+        padding: 19px;
+
+        border-radius: 17px;
+
+        background: #111;
+
+        border:
+            1px solid #2d2818;
+
+        transition:
+            transform .2s,
+            border-color .2s,
+            background .2s;
+    }
+
+
+    .card:hover {
+
+        transform:
+            translateY(-3px);
+
+        border-color:
+            #8d7023;
+
+        background: #151515;
+    }
+
+
+    .card-icon {
+
+        font-size: 24px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .card-title {
+
+        color: #eee;
+
+        font-family:
+            "Estedad",
+            sans-serif;
+
+        font-size: 13px;
+
+        font-weight: 700;
+    }
+
+
+    .card-text {
+
+        color: #666;
+
+        font-size: 9px;
+
+        line-height: 1.8;
+
+        margin-top: 4px;
+    }
+
+
+    /* =========================
+       LOGOUT
+    ========================= */
+
+    .logout {
+
+        width: 100%;
+
+        margin-top: 20px;
+
+        padding: 14px;
+
+        border-radius: 13px;
+
+        border:
+            1px solid #542727;
+
+        background:
+            #1c1010;
+
+        color: #e88d8d;
+
+        font-family:
+            "Vazirmatn",
+            sans-serif;
+
+        font-size: 11px;
+
+        cursor: pointer;
+
+        transition: .2s;
+    }
+
+
+    .logout:hover {
+
+        background:
+            #281414;
+    }
+
+
+    /* =========================
+       LOADING
+    ========================= */
+
+    .loading {
+
+        min-height: 60vh;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        color: #888;
+
+        font-size: 12px;
+    }
+
+
+    .loader {
+
+        width: 38px;
+
+        height: 38px;
+
+        border-radius: 50%;
+
+        border:
+            3px solid #292929;
+
+        border-top-color:
+            #d7b846;
+
+        animation:
+            spin .8s linear infinite;
+    }
+
+
+    @keyframes spin {
+
+        to {
+            transform:
+                rotate(360deg);
+        }
+
+    }
+
+
+    /* =========================
+       ERROR
+    ========================= */
+
+    .error {
+
+        text-align: center;
+
+        padding: 40px 20px;
+    }
+
+
+    .error-icon {
+
+        font-size: 45px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .error h2 {
+
+        font-family:
+            "Estedad",
+            sans-serif;
+
+        font-size: 18px;
+
+        color: #eee;
+
+        margin-bottom: 8px;
+    }
+
+
+    .error p {
+
+        color: #777;
+
+        font-size: 11px;
+
+        line-height: 1.9;
+
+        margin-bottom: 18px;
+    }
+
+
+    .login-button {
+
+        display: inline-block;
+
+        padding:
+            11px 22px;
+
+        border-radius: 11px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #efd064,
+                #9c761d
+            );
+
+        color: #111;
+
+        text-decoration: none;
+
+        font-size: 11px;
+
+        font-weight: 800;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        main {
+
+            padding:
+                25px 14px 50px;
+        }
+
+
+        .header-inner {
+
+            padding:
+                9px 14px;
+        }
+
+
+        .info-grid {
+
+            grid-template-columns: 1fr;
+        }
+
+
+        .cards {
+
+            grid-template-columns: 1fr;
+        }
+
+
+        .profile {
+
+            padding: 20px;
+        }
+
+
+        .welcome h1 {
+
+            font-size: 21px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+
+```
+<div class="header-inner">
+
+    <a
+        href="index.html"
+        class="brand"
+    >
+
+        ✨ شایلی
+
+        <span>
+            طلا و جواهرات
+        </span>
+
+    </a>
+
+
+    <a
+        href="account.html"
+        class="user-icon"
+        title="حساب کاربری"
+    >
+        👤
+    </a>
+
+</div>
+```
+
+</header>
+
+<main id="app">
+
+```
+<div class="loading">
+
+    <div class="loader"></div>
+
+    در حال دریافت اطلاعات حساب...
+
+</div>
+```
+
+</main>
+
+<script>
+
+const API_URL =
+    "https://shayli-prices.amir-sepahan1390.workers.dev";
+
+
+const app =
+    document.getElementById("app");
+
+
+/* ==========================
+   ESCAPE HTML
+========================== */
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* ==========================
+   LOAD ACCOUNT
+========================== */
+
+async function loadAccount() {
+
+    try {
+
+        const response =
+            await fetch(
+                API_URL + "/api/me"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.loggedIn ||
+            !data.user
+        ) {
+
+            window.location.href =
+                "login.html";
+
+            return;
+        }
+
+
+        const user =
+            data.user;
+
+
+        const firstLetter =
+            (user.name || "ک")
+                .trim()
+                .charAt(0);
+
+
+        app.innerHTML = `
+
+            <div class="welcome">
+
+                <small>
+                    حساب کاربری شما
+                </small>
+
+                <h1>
+                    خوش آمدی،
+                    ${escapeHTML(user.name)}
+                    👋
+                </h1>
+
+            </div>
+
+
+            <section class="profile">
+
+                <div class="profile-top">
+
+                    <div class="avatar">
+                        ${escapeHTML(firstLetter)}
+                    </div>
+
+
+                    <div>
+
+                        <div class="profile-name">
+                            ${escapeHTML(user.name)}
+                        </div>
+
+                        <div class="profile-email">
+                            ${escapeHTML(user.email)}
+                        </div>
+
+
+                        <div class="status">
+
+                            <span class="status-dot"></span>
+
+                            حساب فعال
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="section-title">
+                    مشخصات حساب
+                </div>
+
+
+                <div class="info-grid">
+
+
+                    <div class="info">
+
+                        <span class="info-label">
+                            نام کاربری
+                        </span>
+
+                        <div class="info-value">
+                            ${escapeHTML(user.name)}
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="info-label">
+                            ایمیل
+                        </span>
+
+                        <div class="info-value">
+                            ${escapeHTML(user.email)}
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="info-label">
+                            شناسه کاربر
+                        </span>
+
+                        <div class="info-value">
+                            #${escapeHTML(user.id)}
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <span class="info-label">
+                            وضعیت حساب
+                        </span>
+
+                        <div
+                            class="info-value"
+                            style="color:#77d58b;"
+                        >
+                            فعال ✓
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <div class="cards">
+
+
+                <a
+                    href="orders.html"
+                    class="card"
+                >
+
+                    <div class="card-icon">
+                        📦
+                    </div>
+
+                    <div class="card-title">
+                        سفارش‌های من
+                    </div>
+
+                    <div class="card-text">
+                        مشاهده سفارش‌ها و وضعیت خریدها
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="favorites.html"
+                    class="card"
+                >
+
+                    <div class="card-icon">
+                        ❤️
+                    </div>
+
+                    <div class="card-title">
+                        علاقه‌مندی‌ها
+                    </div>
+
+                    <div class="card-text">
+                        محصولات مورد علاقه شما
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="cart.html"
+                    class="card"
+                >
+
+                    <div class="card-icon">
+                        🛒
+                    </div>
+
+                    <div class="card-title">
+                        سبد خرید
+                    </div>
+
+                    <div class="card-text">
+                        مشاهده محصولات انتخاب‌شده
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="settings.html"
+                    class="card"
+                >
+
+                    <div class="card-icon">
+                        ⚙️
+                    </div>
+
+                    <div class="card-title">
+                        تنظیمات حساب
+                    </div>
+
+                    <div class="card-text">
+                        مدیریت اطلاعات و تنظیمات حساب
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="calculator.html"
+                    class="card"
+                >
+
+                    <div class="card-icon">
+                        🧮
+                    </div>
+
+                    <div class="card-title">
+                        حسابگر قیمت طلا
+                    </div>
+
+                    <div class="card-text">
+                        محاسبه قیمت لحظه‌ای طلا
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="shop.html"
+                    class="card"
+                >
+
+                    <div class="card-icon">
+                        💍
+                    </div>
+
+                    <div class="card-title">
+                        فروشگاه
+                    </div>
+
+                    <div class="card-text">
+                        مشاهده محصولات شایلی
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+            <button
+                class="logout"
+                id="logoutButton"
+            >
+                🚪 خروج از حساب کاربری
+            </button>
+
+        `;
+
+
+        document
+            .getElementById("logoutButton")
+            .addEventListener(
+                "click",
+                logout
+            );
+
+    } catch (error) {
+
+        console.error(
+            "ACCOUNT ERROR:",
+            error
+        );
+
+
+        app.innerHTML = `
+
+            <div class="error">
+
+                <div class="error-icon">
+                    ⚠️
+                </div>
+
+                <h2>
+                    اتصال به حساب برقرار نشد
+                </h2>
+
+                <p>
+                    در دریافت اطلاعات حساب مشکلی پیش آمد.
+                    لطفاً دوباره تلاش کنید.
+                </p>
+
+                <a
+                    href="login.html"
+                    class="login-button"
+                >
+                    رفتن به صفحه ورود
+                </a>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* ==========================
+   LOGOUT
+========================== */
+
+async function logout() {
+
+    const button =
+        document.getElementById(
+            "logoutButton"
+        );
+
+
+    if (button) {
+
+        button.disabled = true;
+
+        button.textContent =
+            "در حال خروج...";
+
+    }
+
+
+    try {
+
+        await fetch(
+            API_URL + "/api/logout",
+            {
+                method: "POST"
+            }
+        );
+
+    } catch (error) {
+
+        console.error(
+            "LOGOUT ERROR:",
+            error
+        );
+
+    }
+
+
+    window.location.href =
+        "login.html";
+}
+
+
+/* ==========================
+   START
+========================== */
+
+loadAccount();
+
+</script>
+
+</body>
+
+</html>
