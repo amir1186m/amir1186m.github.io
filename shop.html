@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>فروشگاه | طلا و جواهرات شایلی</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Vazirmatn",Tahoma,Arial,sans-serif;
+    background:#080808;
+    color:white;
+    padding-bottom:80px;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+header{
+    padding:30px 20px;
+    text-align:center;
+    border-bottom:1px solid #80631d;
+    background:
+    linear-gradient(
+        135deg,
+        #0d0d0d,
+        #17130a
+    );
+}
+
+header h1{
+    color:#e5bf4c;
+    font-family:"Playfair Display","Estedad",serif;
+    font-size:34px;
+}
+
+header p{
+    margin-top:8px;
+    color:#999;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(10,10,10,.97);
+    border-bottom:1px solid #333;
+    padding:10px;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    overflow-x:auto;
+}
+
+nav a{
+    white-space:nowrap;
+    background:#151515;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:9px 14px;
+    color:#ccc;
+    font-size:13px;
+}
+
+nav a:hover{
+    color:#e5bf4c;
+    border-color:#80631d;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    color:#e5bf4c;
+    font-family:"Estedad",sans-serif;
+    font-weight:700;
+    font-size:23px;
+    border-right:4px solid #d1a936;
+    padding-right:12px;
+    margin:35px 0 20px;
+}
+
+.live-box{
+    background:#141414;
+    border:1px solid #604c18;
+    border-radius:17px;
+    padding:15px;
+    margin-bottom:20px;
+    text-align:center;
+    color:#aaa;
+}
+
+.live-box strong{
+    color:#e5bf4c;
+}
+
+.search{
+    margin-bottom:20px;
+}
+
+.search input{
+    width:100%;
+    padding:14px 17px;
+    background:#151515;
+    color:white;
+    border:1px solid #444;
+    border-radius:12px;
+    outline:none;
+    font-family:"Vazirmatn",sans-serif;
+    font-size:14px;
+}
+
+.search input:focus{
+    border-color:#d4aa35;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.product{
+    position:relative;
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    border-color:#6d561c;
+}
+
+.product img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
+}
+
+.favorite{
+    position:absolute;
+    top:12px;
+    left:12px;
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    border:1px solid #555;
+    background:rgba(0,0,0,.85);
+    color:white;
+    font-size:23px;
+    cursor:pointer;
+    z-index:2;
+}
+
+.favorite.active{
+    color:#ff4050;
+}
+
+.info{
+    padding:17px;
+}
+
+.info h3{
+    color:#e5bf4c;
+    font-family:"Estedad",sans-serif;
+    font-size:19px;
+}
+
+.description{
+    color:#aaa;
+    font-size:13px;
+    margin:8px 0 14px;
+    line-height:1.9;
+}
+
+.details{
+    background:#0e0e0e;
+    border:1px solid #292929;
+    border-radius:12px;
+    padding:12px;
+    line-height:2.1;
+    font-size:13px;
+    color:#bbb;
+}
+
+.details strong{
+    color:#e5bf4c;
+}
+
+.final-price-box{
+    margin-top:13px;
+    padding:14px;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(229,191,76,.12),
+        rgba(229,191,76,.03)
+    );
+    border:1px solid #604c18;
+    border-radius:13px;
+    text-align:center;
+}
+
+.final-label{
+    color:#999;
+    font-size:12px;
+    margin-bottom:5px;
+}
+
+.final-price{
+    color:#e5bf4c;
+    font-family:"Vazirmatn",sans-serif;
+    font-size:21px;
+    font-weight:800;
+}
+
+.price-note{
+    color:#777;
+    font-size:10px;
+    margin-top:5px;
+}
+
+.buttons{
+    display:flex;
+    gap:8px;
+    margin-top:12px;
+}
+
+.buttons button{
+    flex:1;
+    padding:11px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:"Estedad",sans-serif;
+    font-weight:600;
+}
+
+.add{
+    background:#d4aa35;
+    color:#111;
+    border:none;
+}
+
+.more{
+    background:#222;
+    color:white;
+    border:1px solid #444;
+}
+
+.empty{
+    text-align:center;
+    color:#888;
+    padding:50px;
+}
+
+.toast{
+    position:fixed;
+    bottom:90px;
+    right:50%;
+    transform:translateX(50%) translateY(20px);
+    background:#e5bf4c;
+    color:#111;
+    padding:11px 18px;
+    border-radius:10px;
+    opacity:0;
+    transition:.3s;
+    z-index:3000;
+    pointer-events:none;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateX(50%) translateY(0);
+}
+
+.bottom{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:2000;
+    background:#101010;
+    border-top:1px solid #493912;
+    display:flex;
+    justify-content:space-around;
+    padding:8px 4px;
+}
+
+.bottom a{
+    color:#aaa;
+    text-align:center;
+    font-size:10px;
+}
+
+.bottom a:hover{
+    color:#e5bf4c;
+}
+
+.bottom span{
+    display:block;
+    font-size:20px;
+}
+
+@media(max-width:850px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:550px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:28px;
+    }
+
+    nav{
+        justify-content:flex-start;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>
+💍 فروشگاه شایلی
+</h1>
+
+<p>
+مشاهده محصولات و قیمت لحظه‌ای طلا
+</p>
+
+</header>
+
+<nav>
+
+<a href="index.html">🏠 خانه</a>
+
+<a href="shop.html">💍 فروشگاه</a>
+
+<a href="calculator.html">🧮 حسابگر</a>
+
+<a href="favorites.html">❤️ علاقه‌مندی</a>
+
+<a href="cart.html">🛒 سبد خرید</a>
+
+</nav>
+
+<div class="container">
+
+<h2 class="title">
+💰 محصولات فروشگاه
+</h2>
+
+<div class="live-box">
+
+قیمت لحظه‌ای طلای ۱۸ عیار:
+
+<strong id="goldPrice">
+در حال دریافت...
+</strong>
+
+ریال / گرم
+
+</div>
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="🔍 جستجوی محصول..."
+oninput="searchProducts()"
+
+>
+
+</div>
+
+<div class="products">
+
+<!-- ================= PRODUCT 1 ================= -->
+
+<div
+class="product"
+data-id="1"
+data-name="انگشتر طلا"
+data-weight="2.350"
+data-wage="15"
+data-profit="7"
+>
+
+<button
+class="favorite"
+onclick="toggleFavorite(1,this)">
+
+♡ </button>
+
+<img
+src="ring.jpg"
+alt="انگشتر طلا"
+
+>
+
+<div class="info">
+
+<h3>
+انگشتر طلا
+</h3>
+
+<p class="description">
+انگشتر طلای زیبا و شیک با طراحی خاص.
+</p>
+
+<div class="details">
+
+<div>
+⚖️ وزن:
+<strong>۲.۳۵۰ گرم</strong>
+</div>
+
+<div>
+🛠️ اجرت:
+<strong>۱۵٪</strong>
+</div>
+
+<div>
+💰 سود:
+<strong>۷٪</strong>
+</div>
+
+</div>
+
+<div class="final-price-box">
+
+<div class="final-label">
+قیمت تقریبی فروش
+</div>
+
+<div
+class="final-price"
+data-price-for="1">
+
+در حال محاسبه...
+
+</div>
+
+<div class="price-note">
+بر اساس قیمت لحظه‌ای طلای ۱۸ عیار
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button
+class="add"
+onclick="addCart('انگشتر طلا')">
+
+🛒 افزودن به سبد
+
+</button>
+
+<button
+class="more"
+onclick="showToast('جزئیات محصول')">
+
+جزئیات
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= PRODUCT 2 ================= -->
+
+<div
+class="product"
+data-id="2"
+data-name="دستبند طلا"
+data-weight="3.450"
+data-wage="15"
+data-profit="7"
+>
+
+<button
+class="favorite"
+onclick="toggleFavorite(2,this)">
+
+♡ </button>
+
+<img
+src="bracelet.jpg"
+alt="دستبند طلا"
+
+>
+
+<div class="info">
+
+<h3>
+دستبند طلا
+</h3>
+
+<p class="description">
+دستبند طلای زیبا و شیک مناسب استفاده روزانه و هدیه.
+</p>
+
+<div class="details">
+
+<div>
+⚖️ وزن:
+<strong>۳.۴۵۰ گرم</strong>
+</div>
+
+<div>
+🛠️ اجرت:
+<strong>۱۵٪</strong>
+</div>
+
+<div>
+💰 سود:
+<strong>۷٪</strong>
+</div>
+
+</div>
+
+<div class="final-price-box">
+
+<div class="final-label">
+قیمت تقریبی فروش
+</div>
+
+<div
+class="final-price"
+data-price-for="2">
+
+در حال محاسبه...
+
+</div>
+
+<div class="price-note">
+بر اساس قیمت لحظه‌ای طلای ۱۸ عیار
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button
+class="add"
+onclick="addCart('دستبند طلا')">
+
+🛒 افزودن به سبد
+
+</button>
+
+<button
+class="more"
+onclick="showToast('جزئیات محصول')">
+
+جزئیات
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= PRODUCT 3 ================= -->
+
+<div
+class="product"
+data-id="3"
+data-name="گردنبند طلا"
+data-weight="8.200"
+data-wage="15"
+data-profit="7"
+>
+
+<button
+class="favorite"
+onclick="toggleFavorite(3,this)">
+
+♡ </button>
+
+<img
+src="necklace.jpg"
+alt="گردنبند طلا"
+
+>
+
+<div class="info">
+
+<h3>
+گردنبند طلا
+</h3>
+
+<p class="description">
+گردنبند طلای شیک و خاص با طراحی زیبا.
+</p>
+
+<div class="details">
+
+<div>
+⚖️ وزن:
+<strong>۸.۲۰۰ گرم</strong>
+</div>
+
+<div>
+🛠️ اجرت:
+<strong>۱۵٪</strong>
+</div>
+
+<div>
+💰 سود:
+<strong>۷٪</strong>
+</div>
+
+</div>
+
+<div class="final-price-box">
+
+<div class="final-label">
+قیمت تقریبی فروش
+</div>
+
+<div
+class="final-price"
+data-price-for="3">
+
+در حال محاسبه...
+
+</div>
+
+<div class="price-note">
+بر اساس قیمت لحظه‌ای طلای ۱۸ عیار
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button
+class="add"
+onclick="addCart('گردنبند طلا')">
+
+🛒 افزودن به سبد
+
+</button>
+
+<button
+class="more"
+onclick="showToast('جزئیات محصول')">
+
+جزئیات
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+id="toast"
+class="toast">
+
+انجام شد
+
+</div>
+
+<div class="bottom">
+
+<a href="index.html">
+
+<span>🏠</span>
+خانه
+
+</a>
+
+<a href="shop.html">
+
+<span>💍</span>
+فروشگاه
+
+</a>
+
+<a href="favorites.html">
+
+<span>❤️</span>
+علاقه‌مندی
+
+</a>
+
+<a href="cart.html">
+
+<span>🛒</span>
+سبد خرید
+
+</a>
+
+</div>
+
+<script>
+
+const SERVIX_WORKER_URL =
+"https://shayli-prices.amir-sepahan1390.workers.dev";
+
+
+let currentGoldPrice = 0;
+
+
+function formatPrice(value){
+
+    const number =
+    Number(value);
+
+    if(!Number.isFinite(number)){
+        return "نامشخص";
+    }
+
+    return new Intl.NumberFormat("fa-IR")
+    .format(Math.round(number));
+
+}
+
+
+function calculateProductPrice(product){
+
+    if(
+        !currentGoldPrice ||
+        currentGoldPrice <= 0
+    ){
+        return 0;
+    }
+
+
+    const weight =
+    Number(product.dataset.weight) || 0;
+
+
+    const wage =
+    Number(product.dataset.wage) || 0;
+
+
+    const profit =
+    Number(product.dataset.profit) || 0;
+
+
+    const goldValue =
+    weight * currentGoldPrice;
+
+
+    const wageValue =
+    goldValue * wage / 100;
+
+
+    const subtotal =
+    goldValue + wageValue;
+
+
+    const profitValue =
+    subtotal * profit / 100;
+
+
+    return subtotal + profitValue;
+
+}
+
+
+function updateProductPrices(){
+
+    document
+    .querySelectorAll(".product")
+    .forEach(product => {
+
+        const id =
+        product.dataset.id;
+
+        const element =
+        product.querySelector(
+            `[data-price-for="${id}"]`
+        );
+
+        const price =
+        calculateProductPrice(product);
+
+
+        if(price > 0){
+
+            element.textContent =
+            formatPrice(price) + " ریال";
+
+        }else{
+
+            element.textContent =
+            "در حال دریافت قیمت...";
+
+        }
+
+    });
+
+}
+
+
+async function loadGoldPrice(){
+
+    const goldElement =
+    document.getElementById("goldPrice");
+
+
+    try{
+
+        const response =
+        await fetch(
+            SERVIX_WORKER_URL,
+            {
+                cache:"no-store"
+            }
+        );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "HTTP " +
+                response.status
+            );
+
+        }
+
+
+        const data =
+        await response.json();
+
+
+        const assets =
+        Array.isArray(data)
+        ? data
+        : data.assets || [];
+
+
+        const gold =
+        assets.find(
+            item =>
+            item.code === "GOLD_18_RLS"
+        );
+
+
+        if(!gold){
+
+            throw new Error(
+                "Gold price not found"
+            );
+
+        }
+
+
+        currentGoldPrice =
+        Number(gold.value);
+
+
+        goldElement.textContent =
+        formatPrice(
+            currentGoldPrice
+        );
+
+
+        updateProductPrices();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        goldElement.textContent =
+        "خطا در دریافت قیمت";
+
+    }
+
+}
+
+
+let favorites =
+JSON.parse(
+    localStorage.getItem(
+        "shayliFavorites"
+    ) || "[]"
+);
+
+
+favorites =
+favorites.map(Number);
+
+
+function toggleFavorite(id,button){
+
+    if(
+        favorites.includes(id)
+    ){
+
+        favorites =
+        favorites.filter(
+            x => x !== id
+        );
+
+        button.textContent =
+        "♡";
+
+        button.classList.remove(
+            "active"
+        );
+
+        showToast(
+            "از علاقه‌مندی حذف شد"
+        );
+
+    }else{
+
+        favorites.push(id);
+
+        button.textContent =
+        "♥";
+
+        button.classList.add(
+            "active"
+        );
+
+        showToast(
+            "به علاقه‌مندی اضافه شد ❤️"
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "shayliFavorites",
+        JSON.stringify(favorites)
+    );
+
+}
+
+
+function restoreFavorites(){
+
+    document
+    .querySelectorAll(".favorite")
+    .forEach(button => {
+
+        const product =
+        button.closest(".product");
+
+        const id =
+        Number(product.dataset.id);
+
+
+        if(
+            favorites.includes(id)
+        ){
+
+            button.textContent =
+            "♥";
+
+            button.classList.add(
+                "active"
+            );
+
+        }
+
+    });
+
+}
+
+
+let cart =
+JSON.parse(
+    localStorage.getItem(
+        "shayliCart"
+    ) || "[]"
+);
+
+
+function addCart(name){
+
+    cart.push(name);
+
+    localStorage.setItem(
+        "shayliCart",
+        JSON.stringify(cart)
+    );
+
+    showToast(
+        name +
+        " به سبد خرید اضافه شد 🛒"
+    );
+
+}
+
+
+function searchProducts(){
+
+    const text =
+    document
+    .getElementById("search")
+    .value
+    .trim()
+    .toLowerCase();
+
+
+    document
+    .querySelectorAll(".product")
+    .forEach(product => {
+
+        const name =
+        product.dataset.name
+        .toLowerCase();
+
+
+        product.style.display =
+        name.includes(text)
+        ? ""
+        : "none";
+
+    });
+
+}
+
+
+function showToast(text){
+
+    const toast =
+    document.getElementById("toast");
+
+    toast.textContent =
+    text;
+
+    toast.classList.add("show");
+
+
+    setTimeout(
+        () => {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        2000
+    );
+
+}
+
+
+loadGoldPrice();
+
+restoreFavorites();
+
+
+setInterval(
+    loadGoldPrice,
+    120000
+);
+
+</script>
+
+</body>
+</html>
