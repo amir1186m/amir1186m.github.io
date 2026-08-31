@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>حسابگر قیمت طلا | شایلی</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial;
+    background:#080808;
+    color:white;
+    min-height:100vh;
+}
+
+header{
+    padding:28px 15px;
+    text-align:center;
+
+    border-bottom:1px solid #80631d;
+}
+
+header h1{
+    color:#e5bf4c;
+}
+
+.container{
+    width:92%;
+    max-width:650px;
+    margin:auto;
+}
+
+.calculator{
+
+    margin-top:35px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #191919,
+        #0d0d0d
+    );
+
+    border:1px solid #765b19;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.5);
+}
+
+.title{
+    color:#e5bf4c;
+    margin-bottom:22px;
+}
+
+label{
+    display:block;
+    color:#bbb;
+    margin-bottom:7px;
+}
+
+input{
+
+    width:100%;
+
+    background:#171717;
+    color:white;
+
+    border:1px solid #444;
+
+    border-radius:11px;
+
+    padding:14px;
+
+    margin-bottom:17px;
+
+    outline:none;
+
+    font-size:15px;
+}
+
+input:focus{
+    border-color:#d4aa35;
+}
+
+.result{
+
+    margin-top:20px;
+
+    background:#111;
+
+    border:1px solid #493912;
+
+    border-radius:15px;
+
+    padding:22px;
+
+    text-align:center;
+}
+
+.result small{
+    color:#999;
+}
+
+.result strong{
+    display:block;
+
+    color:#e5bf4c;
+
+    font-size:27px;
+
+    margin-top:8px;
+}
+
+.note{
+    color:#888;
+    font-size:12px;
+    line-height:1.9;
+    margin-top:18px;
+}
+
+.back{
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:#d4aa35;
+    color:#111;
+
+    padding:12px 20px;
+
+    border-radius:11px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>
+🧮 حسابگر قیمت طلا
+</h1>
+
+<p style="color:#aaa">
+طلا و جواهرات شایلی
+</p>
+
+</header>
+
+
+<div class="container">
+
+<div class="calculator">
+
+<h2 class="title">
+محاسبه قیمت طلای ۱۸ عیار
+</h2>
+
+
+<label>
+قیمت هر گرم طلای ۱۸ عیار
+</label>
+
+<input
+id="goldPrice"
+type="number"
+placeholder="قیمت هر گرم را وارد کنید"
+oninput="calculate()"
+>
+
+
+<label>
+وزن طلا به گرم
+</label>
+
+<input
+id="weight"
+type="number"
+step="0.001"
+min="0"
+placeholder="مثلاً وزن موردنظر"
+oninput="calculate()"
+>
+
+
+<div class="result">
+
+<small>
+قیمت تقریبی طلا
+</small>
+
+<strong id="result">
+۰ ریال
+</strong>
+
+</div>
+
+
+<p class="note">
+
+این محاسبه فقط قیمت تقریبی طلای خام
+بر اساس قیمت هر گرم است.
+اجرت ساخت، سود فروشنده، مالیات و سایر هزینه‌ها
+در صورت وجود جداگانه محاسبه می‌شوند.
+
+</p>
+
+
+<a
+href="index.html"
+class="back">
+← برگشت به سایت
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculate(){
+
+    const price =
+    Number(
+        document
+        .getElementById("goldPrice")
+        .value
+    );
+
+
+    const weight =
+    Number(
+        document
+        .getElementById("weight")
+        .value
+    );
+
+
+    const result =
+    price * weight;
+
+
+    document
+    .getElementById("result")
+    .textContent =
+
+    result > 0
+
+    ? result.toLocaleString("fa-IR") +
+      " ریال"
+
+    : "۰ ریال";
+
+}
+
+</script>
+
+</body>
+
+</html>
